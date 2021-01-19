@@ -8,11 +8,14 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "mongoose": "^5.11.12",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "rimraf": "^3.0.2"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon src/index.js --exec babel-node",
-    "seed": "babel-node seed/ProductSeeder.js"
+    "seed": "babel-node seed/ProductSeeder.js",
+    "build": "babel src -d dist",
+    "clean": "rimraf dist"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",

@@ -1,3 +1,3 @@
 export const renderIndex = (req, res) => {
-  res.render("index", { title: "Express" });
+  res.render("store/index", { title: "Express" });
 };

@@ -11,7 +11,8 @@
     "morgan": "^1.10.0"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon src/index.js --exec babel-node"
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js --exec babel-node",
+    "seed": "babel-node seed/ProductSeeder.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",

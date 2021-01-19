@@ -1,1 +1,20 @@
-<h1>Hello world</h1>
+<div class="row">
+
+  {{#each products}}
+
+  <div class="col-md-4 p-4">
+    <div class="card card-body bg-dark text-white border-success">
+      <div class="d-flex justify-content-between">
+        <h3>{{name}}</h3>
+        <p>${{price}}</p>
+      </div>
+      <img src="{{imagePath}}" style="width: 50%" class="mx-auto">
+      <p>{{description}}</p>
+      <div class="d-flex flex-row-reverse">
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  {{/each}}
+</div>

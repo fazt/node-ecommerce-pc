@@ -1,0 +1,14 @@
+{{#if messages}}
+<div class="alert alert-danger">
+    {{#each messages}}
+        <p>{{this}}</p>
+    {{/each}}
+</div>
+{{/if}}
+
+<form method="POST" action="/auth/signup">
+    <input type="email" name="email" placeholder="email">
+    <input type="password" name="password" id="password" placeholder="password">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <button>signup</button>
+</form>

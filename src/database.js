@@ -1,7 +1,7 @@
 import { connect } from "mongoose";
 
 export const connectToDb = async () => {
-  const db = await connect("mongodb://localhost/store-laptop", {
+  const db = await connect("mongodb://localhost/storepc", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

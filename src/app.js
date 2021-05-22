@@ -2,8 +2,15 @@ import express from "express";
 import config from "./config";
 import path from "path";
 import exphbs from "express-handlebars";
+import passport from 'passport'
+import flash from 'connect-flash'
+import morgan from 'morgan'
+import cookieParser from 'cookie-parser'
+import session from 'express-session'
 
 import indexRoutes from "./routes/index";
+
+import './config/passport';
 
 const app = express();
 
@@ -22,8 +29,18 @@ app.engine(
 app.set("view engine", ".hbs");
 
 // Middlewares
+app.use(morgan('dev'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser())
+app.use(session({
+  secret: 'mysecretword',
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(flash())
 
 // Routes
 app.use(indexRoutes);
